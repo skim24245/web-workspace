@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+#searchResult{
+width: 70%;
+height: 1200px;
+border: 1px solid green;
+}
+
+</style>
+<script src="/Lecture-Web/Jquery/js/jquery-3.6.0.min.js"></script>
+<script>
+
+/* let func = function(){
+   
+}
+
+let func02= func
+func02() */
+$(document).ready(function() {
+   $('#searchBtn').click(function() {
+   let searchDate = $('#searchDate').val().split('-').join('')
+   
+      $.ajax({
+         type: 'get'
+         ,url : "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json" 
+         ,data : {
+            key : '21946090c00502c25bca2a47acbfd461'
+         /*    ,targetDt :20220530 */
+            ,targetDt: searchDate
+         },success: callback
+         , error: function(){
+            alert('실패')
+         }
+      })
+   })
+   
+})
+
+   function callback(result){
+   let list =result.boxOfficeResult.dailyBoxOfficeList
+   $('#serachResult').empty()
+   for (let i=0; i< list.length;i++){
+      let movieData = list[i]
+      let rank = movieData.rank
+      let name = movieData.movieNm
+      let audiCnt = movieData.audiCnt
+      let movieCd =movieData.movieCd
+      $('#searchResult').append('<h4>' + rank + '위</h4>')
+      $('#searchResult').append(`<strong>${name}</strong>(${audiCnt}명)`)
+       $('#searchResult').append(`<button id='btn01-${movieCd}'상세보기</button>`)
+      /* $('#searchResult').append(`<button id='btn01' value=${movieCd}>상세보기</button>`)
+       */
+      /*  $('#searchResult').append(`<button id='btn01-${movieCd}'상세보기</button>`) */
+       
+   }
+   console.log(result)
+}
+
+
+$(document).on('click', '#searchResult > button ', function(){
+	  let movieCd = $(this).val();
+	  console.log(movieCd);
+	  $.ajax({
+	         type: 'get'
+	         ,url : "http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json" 
+	         ,data : {
+	            key : '21946090c00502c25bca2a47acbfd461'
+	            ,movieCd:movieCd
+	         },success: callback
+	         , error: function(){
+	            alert('실패')
+	         }
+	  })
+	  
+} )
+
+</script>
+</head>
+<body>
+<h2>일별 박스오피스 조회서비스</h2>
+조회날짜 : <input type="date" id="searchDate">
+<button id="searchBtn">조회</button>
+<h3>검색 결과</h3>
+<div id="searchResult"></div>
+<div id="detail"></div>
+
+
+</body>
+</html>

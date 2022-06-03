@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+/* 	let pTags = document.getElementsByTagName("p")
+	let html = pTags[0].innerHTML
+	let text = pTags[0].innerText
+	
+	alert('html : ' + html + '\ntext : ' +text)
+	 */
+let html = $('p').html()
+let text = $('p').text()
+alert('html : ' + html + '\ntext : ' +text)
+
+
+$('button').click(function(){
+	let name = $('#name').val()
+	alert('name : ' + name)
+})
+
+})
+
+
+
+</script>
+</head>
+<body>
+  <p> 내 이름은 <b>홍길동 </b>이고 , 별명은 <i>의적</i>입니다</p>
+ <p> 내 이름은 <strong>홍길순 </strong>이고 , 별명은 <em>의적2</em>입니다</p>
+ 이름: <input type="text" id ="name"><button>입력완료</button>
+ 
+</body>
+</html>

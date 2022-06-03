@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+ h1 {
+	display: none
+}
+</style>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+	/* alert('hh')
+	let h1Tag = document.getElementsByTagName('h1')[0]
+	h1Tag.setAttribute("style", "display:block")
+	 */
+	 $('h1').fadeIn(5000)
+})
+
+</script>
+</head>
+<body>
+<h1>HELLO JQUERY</h1>
+</body>
+</html>

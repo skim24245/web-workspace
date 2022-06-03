@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+	
+	$('#btn01').click(function(){
+	let h1Tag = document.createElement('h1')  //h1 태그를 만든다 
+	let text = document.createTextNode("세번째 문장") //문장을 쓴다
+	h1Tag.appedChild(text) //h1태그안에 text 문장을 집어넣는다  => 함께 합쳐진다. 
+	let divTag = document.querySelector('div') //div 위치를 찾는다
+	divTag.appendChild(h1Tag) //div 문장에다가 h1tag를 집어넣는다
+})
+
+})
+
+</script>
+</head>
+<body>
+<div>
+  <h1>첫번째 문장</h1>
+  <h1>두번째 문장</h1>
+  </div>
+ <button id="btn01">문장추가</button>
+</body>
+</html>

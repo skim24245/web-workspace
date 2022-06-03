@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;Mission-Web/src/main/webapp/html/Pinfoinput.html&apos; to &apos;text.html&apos;" description="Rename resource &apos;Pinfoinput.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/html/Pinfoinput.html" name="text.html" stamp="1654163996493" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;Mission-Web/src/main/webapp/html/text.html&apos; to &apos;test.html&apos;" description="Rename resource &apos;text.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/html/text.html" name="test.html" stamp="1654164000938" updateReferences="true"/>
+</session>

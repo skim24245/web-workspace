@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- http://localhost:9999/Lecture-Web/method 요청 -->
+
+
+<form action="/Lecture-Web/method" method="get">
+ID : <input type="text" name="id">
+	 <input type="submit" value ="GET방식 호출">
+
+</form>
+
+
+
+<form action="/Lecture-Web/method" method="post">
+ID : <input type="text" name="id">
+	 <input type="submit" value ="POST방식 호출">
+</form>
+
+
+<form action="/Lecture-Web/servlet/exam" method="get">
+NAME : <input type="text" name="name"><br>
+취미: 
+<input type="checkbox" name="hobby" value="reading"> reading
+ <input type="checkbox" name="hobby" value="music">music
+ <input type="checkbox" name="hobby" value="movie">movie
+ <input type="checkbox" value="전송">
+
+</form>
+
+</body>
+</html>

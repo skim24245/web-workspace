@@ -1,0 +1,25 @@
+package kr.ac.kopo.servlet;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class MethodServlet extends HttpServlet {
+
+	//http://localhost:9999/Lecture-Web/method?id=hong 
+	//클라이언트가 아이디 입력한걸 서버에다가 보내고 있음.
+	//서버 입장에서는 사용자가 넘겨준 id를 추출해야 함.
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		String method =request.getMethod();
+		String id = request.getParameter("id");
+		System.out.println("요청 Method : " + method);
+		System.out.println("id : " + id);
+	}
+
+	
+}

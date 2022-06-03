@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+#searchResult{
+width: 70%;
+height: 1300px;
+border: 1px solid green;
+}
+
+</style>
+<script src="/Lecture-Web/Jquery/js/jquery-3.6.0.min.js"></script>
+<script>
+
+/* let func = function(){
+   
+}
+
+let func02= func
+func02() */
+$(document).ready(function() {
+   $('#searchBtn').click(function() {
+   let searchDate = $('#searchDate').val().split('-').join('')
+   
+      $.ajax({
+         type: 'get'
+         ,url : "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json" 
+         ,data : {
+            key : '21946090c00502c25bca2a47acbfd461'
+         /*    ,targetDt :20220530 */
+            ,targetDt: searchDate
+         },success: callback
+         , error: function(){
+            alert('실패')
+         }
+      })
+   })
+   
+})
+
+   function callback(result){
+   let list =result.boxOfficeResult.dailyBoxOfficeList
+   $('#serachResult').empty()
+   for (let i=0; i< 5;i++){
+      let movieData = list[i]
+      let rank = movieData.rank
+      let name = movieData.movieNm
+      let audiCnt = movieData.audiCnt
+      let movieCd =movieData.movieCd
+      $('#searchResult').append('<h4>' + rank + '위</h4>')
+      $('#searchResult').append(`<strong>${name}</strong>(${audiCnt}명)`)
+      $('#searchResult').append(`<br><button id="btn01" value=${movieCd}>상세보기</button><div style="display:none" id=${movieCd}></div><br>`)
+	  $('#searchResult').append('<hr>')
+   }
+   console.log(result)
+}
+
+
+$(document).on('click', '#btn01', function(){
+	  let movieCd = $(this).val();
+	  $.ajax({
+	         type: 'get'
+	         ,url : "http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json" 
+	         ,data : {
+	            key : '21946090c00502c25bca2a47acbfd461'
+	            ,movieCd:movieCd
+	         },success: detail
+	         , error: function(){
+	            alert('실패')
+	         }
+	  })
+	  
+} )
+
+function detail(data){
+	let movieCd = data.movieInfoResult.movieInfo.movieCd
+	let directors = data.movieInfoResult.movieInfo.directors[0].peopleNm
+	let genres = [] //빈공간 생성
+	let actors = ''
+	let id = '#'+movieCd
+	$(id).empty()
+	for(let i=0; i<data.movieInfoResult.movieInfo.genres.length; i++){
+		
+		genres[i] = data.movieInfoResult.movieInfo.genres[i].genreNm
+
+		}
+	for(let i=0; i<data.movieInfoResult.movieInfo.actors.length; i++){
+		
+		actors += (data.movieInfoResult.movieInfo.actors[i].peopleNm+"("+
+				data.movieInfoResult.movieInfo.actors[i].cast+"역)<br>")
+
+		}
+	
+	$(id).toggle()
+	$(id).css('border','1px solid blue')		
+	$(id).append('<br>감독:'+directors+'<br>')
+	$(id).append('장르:'+genres+'<br>')
+	$(id).append('배우정보:<br>'+actors+'<br>')
+}
+
+</script>
+</head>
+<body>
+<h2>일별 박스오피스 조회서비스</h2>
+조회날짜 : <input type="date" id="searchDate">
+<button id="searchBtn">조회</button>
+<h3>검색 결과</h3>
+<div id="searchResult"></div>
+
+
+</body>
+</html>

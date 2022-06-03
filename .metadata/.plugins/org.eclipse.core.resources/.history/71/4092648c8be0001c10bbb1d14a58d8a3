@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+#msgView{
+width: 500px;
+height: 200px;
+border: 1px solid green;
+}
+
+</stylE>
+<script src = "/Lecture-Web/Jquery/js/jquery-3.6.0.min.js"></script>
+
+<script>
+$(document).ready(function(){
+	
+})
+
+</script>
+</head>
+<body>
+
+<h2>서버에서 받은 메세지</h2>
+<div id="msgView"></div>
+<button>서버에 자료 요청</button>
+</body>
+</html>

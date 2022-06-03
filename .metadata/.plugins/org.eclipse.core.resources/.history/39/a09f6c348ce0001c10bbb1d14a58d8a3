@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+#msgView{
+width: 500px;
+height: 200px;
+border: 1px solid green;
+}
+
+</stylE>
+<script src = "/Lecture-Web/Jquery/js/jquery-3.6.0.min.js"></script>
+
+<script>
+$(document).ready(function(){
+	$('button').click(function(){
+		/* url : 요청주소(문자열 형태로 날라옴)
+		type : 요청메소드 (get 방식인지 post 방식인지 문자열 형태로 날라옴)
+		data : 파라미터 (문자열, 객체) (name = value 형태 또는 json 형태) 
+		success: 수신 성공 (readystate4, status200)
+		erro  : 수신 실패 (함수) */
+		
+		
+		$.ajax({
+			url: 'hello.html'
+			, success : function(){
+				alert('성공')
+			} ,error : function(){
+				alert('실패')
+			}
+		})
+	})
+	
+})
+
+</script>
+</head>
+<body>
+
+<h2>서버에서 받은 메세지</h2>
+<div id="msgView"></div>
+<button>서버에 자료 요청</button>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+div {
+	height: 100px;
+	width: 100px;
+	float: left;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	border: 1px solid white;
+	margin-top: 300px;
+}
+
+h2 {
+	text-align: center;
+}
+
+.sun {
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	position: relative;
+}
+
+.mon {
+	width: 100px;
+	height: 100px;
+	background-color: orange;
+	position: relative;
+}
+
+.tue {
+	width: 100px;
+	height: 100px;
+	background-color: yellow;
+	position: relative;
+}
+
+.wed {
+	width: 100px;
+	height: 100px;
+	background-color: green;
+	position: relative;
+}
+
+.thu {
+	width: 100px;
+	height: 100px;
+	background-color: blue;
+	position: relative;
+}
+
+.fri {
+	width: 100px;
+	height: 100px;
+	background-color: indigo;
+	position: relative;
+}
+
+.sat {
+	width: 100px;
+	height: 100px;
+	background-color: purple;
+	position: relative;
+}
+
+.sun {
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	position: relative;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+<script>
+	$(document).ready(function() {
+
+		$('.sun').mouseover(function() {
+			$(this).css("width", "150px")
+			$(this).css("height", "150px")
+			$(this).html("html", "일요일")
+		})
+
+		$('.sun').mouseleave(function() {
+			$(this).css("width", "50px")
+			$(this).css("height", "50px")
+			$(this).html("html", "일요일")
+		})
+
+		$('.mon').mouseover(function() {
+			$(this).css("width", "150px")
+			$(this).css("height", "150px")
+			$(this).html("html", "월요일")
+		})
+
+		$('.mon').mouseleave(function() {
+			$(this).css("width", "50px")
+			$(this).css("height", "50px")
+			$(this).html("html", "월요일")
+		})
+
+		$('.tue').mouseover(function() {
+			$(this).css("width", "150px")
+			$(this).css("height", "150px")
+			$(this).html("html", "화요일")
+		})
+
+		$('.tue').mouseleave(function() {
+			$(this).css("width", "50px")
+			$(this).css("height", "50px")
+			$(this).html("html", "화요일")
+		})
+		$('.wed').mouseover(function() {
+			$(this).css("width", "150px")
+			$(this).css("height", "150px")
+			$(this).html("html", "수요일")
+		})
+
+		$('.wed').mouseleave(function() {
+			$(this).css("width", "50px")
+			$(this).css("height", "50px")
+			$(this).html("html", "수요일")
+		})
+
+		$('.thu').mouseover(function() {
+			$(this).css("width", "150px")
+			$(this).css("height", "150px")
+			$(this).html("html", "목요일")
+		})
+
+		$('.thu').mouseleave(function() {
+			$(this).css("width", "50px")
+			$(this).css("height", "50px")
+			$(this).html("html", "목요일")
+		})
+		$('.fri').mouseover(function() {
+			$(this).css("width", "150px")
+			$(this).css("height", "150px")
+			$(this).html("html", "금요일")
+		})
+		$('.fri').mouseleave(function() {
+			$(this).css("width", "50px")
+			$(this).css("height", "50px")
+			$(this).html("html", "금요일")
+		})
+		$('.sat').mouseover(function() {
+			$(this).css("width", "150px")
+			$(this).css("height", "150px")
+			$(this).html("html", "토요일")
+		})
+		$('.sat').mouseleave(function() {
+			$(this).css("width", "50px")
+			$(this).css("height", "50px")
+			$(this).html("html", "토요일")
+		})
+	})
+</script>
+</head>
+<body>
+
+	<div class="sun">
+		<h2>일요일
+	</div>
+	<div class="mon">
+		<h2>월요일
+	</div>
+	<div class="tue">
+		<h2>화요일
+	</div>
+	<div class="wed">
+		<h2>수요일
+	</div>
+	<div class="thu">
+		<h2>목요일
+	</div>
+	<div class="fri">
+		<h2>금요일
+	</div>
+	<div class="sat">
+		<h2>토요일
+	</div>
+
+
+</body>
+</html>

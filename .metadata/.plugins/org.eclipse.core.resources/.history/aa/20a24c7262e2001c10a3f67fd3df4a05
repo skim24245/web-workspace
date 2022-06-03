@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/Lecture-Web/js/Jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+
+<h1>개인 정보 입력</h1>
+<!-- http://localhost:9999/Lecture-Web/Pinfoinput.html 요청 -->
+
+
+<form action="/Lecture-Web/servlet" method="post">
+이름 : <input type="text" name="name"> <br>
+
+아이디 : <input type="text" name="id"> <br>
+
+패스워드 : <input type="text" name="pwd"><br>
+
+성별 : <input type="radio" name="gender" value="man">남 
+	  <input type="radio" name="gender" value="woman">여 <br>
+
+메일 수신 여부 : 
+공지 메일 <input type="checkbox" name="notifiction mail" value="notifiction mail" >
+광고 메일<input type="checkbox" name="advertisement mail" value="advertisement mail">
+배송 확인 메일<input type="checkbox" name="delievery check mail" value=><br><br>
+
+직업: 
+<select name="job">
+    <option value="회사원">회사원</option>
+    <option value="학생">학생</option>
+    <option value="기타">기타</option>
+</select> <br><br>
+
+<input type="submit" value="취소"> 
+<input type="submit" value="확인">
+ <br><br>
+</form>
+
+
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+package kr.ac.kopo.servlet;
+
+public class HelloServlet {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

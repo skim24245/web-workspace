@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+	
+	$('#btn01').click(function(){ 
+	let h1Tag = document.createElement('h1')  //h1 태그를 만든다 
+	let text = document.createTextNode("세번째 문장") //문장을 쓴다
+	h1Tag.appedChild(text) //h1태그안에 text 문장을 집어넣는다  => 함께 합쳐진다. 
+	let divTag = document.querySelector('div') //div 위치를 찾는다
+	divTag.appendChild(h1Tag) //div 문장에다가 h1tag를 집어넣는다 */
+	
+	/* $('div').append('<h1> 세번째 문장 </h1>') */
+	$('div').prepend('<h1> 세번째 문장</h1>')
+	
+	
+})
+
+	$('#btn02').click(function(){
+		$('ol').append('<li>노랑 </li>', '<li> 보라</li>')
+	/* /* /* /* 	/* $('ol').append('<li>노랑 </li>') */ */ */ */ */
+
+	
+})
+
+	$('#btn03').click(function(){
+	$('div').before('<a href="http://www.naver.com">네이버</a>')
+})
+
+$('#btn04').click(function(){
+	let pTags = document.querySelectAll('p')
+	for(let i = 0; i< pTags.length; i++){
+		//pTags[i].remove() 대신에 밑에 처럼 
+		pTags[i].parentNode.removeChild(pTags[i])
+	}
+})
+})
+
+
+
+</script>
+</head>
+<body>
+<div>
+  <h1>첫번째 문장</h1>
+  <h1>두번째 문장</h1>
+  </div>
+  <ol>
+  <li> 빨강</li>
+  <li> 파랑 </li>
+  <li> 초록 </li>
+  
+  </ol>
+  
+ <button id="btn01">문장추가</button>
+ <button id="btn02">색상추가</button>
+ <button id="btn03">링크추가</button>
+ <button id="btn04">문장삭제</button>
+</body>
+</html>

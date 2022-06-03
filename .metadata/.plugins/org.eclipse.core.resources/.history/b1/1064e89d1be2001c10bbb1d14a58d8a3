@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- http://localhost:9999/Lecture-Web/method 요청 -->
+
+
+<form action="/Lecture-Web/method" method="get">
+ID : <input type="text" name="id">
+	 <input type="submit" value ="GET방식 호출">
+
+</form>
+
+
+<!-- http://localhost:9999/Lecture-Web/method 요청 -->
+<form action="/Lecture-Web/method" method="post">
+ID : <input type="text" name="id">
+	 <input type="submit" value ="POST방식 호출">
+
+</form>
+
+
+</body>
+</html>

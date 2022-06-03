@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+/* 	let pTags = document.getElementsByTagName("p")
+	let html = pTags[0].innerHTML
+	let text = pTags[0].innerText
+	
+	alert('html : ' + html + '\ntext : ' +text)
+	 */
+let html = $('p').html()
+let text = $('p').text()
+let attr = $('a').attr('href')
+
+alert('html : ' + html + '\ntext : ' +text + '\n주소: ' + attr)
+
+
+$('#btn01').click(function(){
+	let name = $('#name').val()
+	alert('name : ' + name)
+})
+
+
+$('#btn02').click(function(){
+	$('a').attr('href', 'http://www.daum.net')
+	
+})
+
+$('#btn03').click(function(){
+/* 	$('p').html('<mark>문장변환</mark>') */
+    $('p').html(function(index,element){
+	console.log(index, element)
+	return "aaa"
+	
+ })
+
+	
+})
+
+})
+
+
+
+</script>
+</head>
+<body>
+  <p> 내 이름은 <b>홍길동 </b>이고 , 별명은 <i>의적</i>입니다</p>
+ <p> 내 이름은 <strong>홍길순 </strong>이고 , 별명은 <em>의적2</em>입니다</p>
+ 이름: <input type="text" id ="name"><button>입력완료</button>
+ <a href = "http://www.naver.com">사이트로 이동</a><button id ="btn02">주소변경</button><br>
+ <button id="btn03">문장변환</button>
+ 
+</body>
+</html>

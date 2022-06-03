@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+img{
+width: 150px;
+height: 150px;
+float: left;
+}
+
+button{
+height: 150px;
+float:left;
+background-color: wheat;
+}
+
+</style>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+	$('#prevBtn').click(function(){
+		$('img').last().prependTo('span')
+	})
+
+	$('#nextBtn').click(function(){
+		$('img').first().appendTo('span')
+	})
+})
+
+</script>
+</head>
+<body>
+<button id ="prevBtn">PREV</button>
+<span>
+<img src = "images/개2.jpg">
+<img src = "images/개3.jpg">
+<img src = "images/개4.jpg">
+<img src = "images/개5.jpg">
+</span>
+<button id ="nextBtn">NEXT</button>
+</body>
+</html>

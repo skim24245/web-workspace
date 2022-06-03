@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+ h1 {
+	display: none
+}
+</style>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+	
+})
+
+</script>
+</head>
+<body>
+<h1>HELLO JQUERY</h1>
+</body>
+</html>

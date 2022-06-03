@@ -1,0 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>게시물 목록</title>
+</head> <!-- http://localhost9999/Mission-Web02/jsp/board/list.jsp -->
+<body>
+
+	<div align ="center">
+	<hr>
+	<h2>전체게시글 조회</h2>
+	<hr>
+	</div>
+	
+	
+</body>
+</html>

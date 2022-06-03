@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/Lecture-Web/Jquery/js/jquery-3.6.0.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$('button').click(function() {
+			
+			let name = $('#name').val()
+			let age = document.getElementById("age").value
+			let param = 'name=' + name + '&age=' + age
+			
+			$.ajax({
+				url : 'param.jsp',
+				type : 'get',
+				/* data : 'name=hong&age=25', */
+				date : {
+					name : 'hong'
+					,age: 25
+				},
+				success : function(data) {
+					$('#msgView').val(data)
+				},
+				error : function() {
+					alert('실패')
+				}
+			})
+		})
+	})
+</script>
+</head>
+<body>
+	<textarea rows="10" cols="80" id="msgView"></textarea>
+	<br> 이름:
+	<input type=text " name="name" id="name">
+	<br>
+	<br> 나이:
+	<input type="text" name="age" id="age">
+	<br>
+	<br>
+	<button>전송</button>
+
+</body>
+</html>

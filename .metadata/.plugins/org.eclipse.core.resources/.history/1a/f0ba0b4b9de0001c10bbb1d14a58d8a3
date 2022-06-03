@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src = "/Lecture-Web/Jquery/js/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+	$('button').click(function(){
+		
+	})
+})
+</script>
+</head>
+<body>
+<textarea rows="10" cols="80" id="msgView"></textarea><br>
+이름: <input type = text" name="name"><br>
+나이: <input type ="text" name="age"><br>
+<button>전송</button>
+
+</body>
+</html>

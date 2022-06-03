@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+	$('h1').click(function(){
+	$(this).css('color','red')	
+	})
+	$('h1').mouseenter(function(){
+	$(this).css('background-color','lightgray')	
+	})
+	
+})
+
+</script>
+</head>
+<body>
+<h1>첫번째 문장</h1>
+<h1>두번째 문장</h1>
+<h1>세번째 문장</h1>
+</body>
+</html>

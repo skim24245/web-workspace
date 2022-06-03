@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+div{
+height: 100px;
+width:100px;
+float:left;
+display: flex;
+justify-content:center;
+align-content:center;
+border:1px solid white;
+}
+
+h2{
+text-align:center;
+}
+
+
+.sun {
+width : 100px;
+height : 100px;
+background-color: red;
+position:  relative;
+}
+
+.mon {
+width : 100px;
+height : 100px;
+background-color: orange;
+position: relative;
+} 
+
+.tue {
+width : 100px;
+height : 100px;
+background-color: yellow;
+position: relative;
+
+}
+
+.wed {
+width : 100px;
+height : 100px;
+background-color: green;
+position: relative;
+
+}
+
+.thu {
+width : 100px;
+height : 100px;
+background-color: blue;
+position:  relative;
+
+}
+
+.fri {
+width : 100px;
+height : 100px;
+background-color: indigo;
+position:  relative;
+
+}
+
+.sat {
+width : 100px;
+height : 100px;
+background-color: purple;
+position:  relative;
+
+}
+
+
+.sun {
+width : 100px;
+height : 100px;
+background-color: red;
+position:  relative;
+
+}
+ 
+
+
+
+
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+<script>
+ $(document).ready(function(){
+	$('div').mouseenter(function(){
+		$('this').mousemove({
+		width : '100px',
+		left : '100px'
+	},2000)
+})
+
+
+ 
+
+
+
+</script>
+</head>
+<body>
+
+<div class="sun"><h2>일요일</div>
+<div class="mon"><h2>월요일</div>
+<div class="tue"><h2>화요일</div>
+<div class="wed"><h2>수요일</div>
+<div class="thu"><h2>목요일</div>
+<div class="fri"><h2>금요일</div>
+<div class="sat"><h2>토요일</div>
+
+
+</body>
+</html>
